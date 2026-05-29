@@ -35,7 +35,7 @@ def registrar_Tripulantes():
 #criar um menu
 print("Bem vindo ao menu interativo da nave. Por favor, selecione uma opçâo:")
 while True:
-    print("\n 1- Mostrar status da nave | 2- Viajar | 3- Abastecer | 4- Novo tribulante | 5- Sair")
+    print("\n 1- Mostrar status da nave 💻 | 2- Viajar 🚀 | 3- Abastecer ⛽ | 4- Novo tribulante 🧑‍🚀 | 5- Sair ❌")
     opção = input("Escolha: ")
     
     if opção == "1":
