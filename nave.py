@@ -1,7 +1,7 @@
 #definir as váriavéis
 
 combustivel = 100
-tribulantes = []
+tripulantes = []
 
 #definir funções
 
@@ -24,18 +24,32 @@ def status_nave():
     #mostre a quantidade de combustível e os tripulantes
     print("\n-------------🧑‍🚀STATUS DA NAVE🧑‍🚀-------------")
     print(f"\nAtualmente, temos {combustivel} litros no tanque!")
-    print(f"\nNossa tripulação é composta por: {tribulantes}\n")
+    print(f"\nNossa tripulação é composta por: {tripulantes}\n")
     print("----------------------------------------\n")
 
 def registrar_Tripulantes():
     novotripulante = input("qual é o nome do novo tripulante?")
-    tribulantes.append(novotripulante)
+    tripulantes.append(novotripulante)
     print("Novo tripulante inserido com sucesso!🚀")
+
+#Cria uma função que tira o ultimo tripulante
+def retirar_tripulantes():
+    print(f"Atualmente nossos passageiros são: {tripulantes}")
+    retirar =input("Gostaria que retirar o ultimo tripulante registrado? Essa ação não poderá ser desfeita! \n")
+    if retirar == "sim" and tripulantes != []:
+        print(f"Certo! Eramos {tripulantes}. Agora, temos:")
+        tripulantes.pop()
+        print(f"\n {tripulantes}!")
+    elif retirar == "sim" and tripulantes == []:
+        print("Ei! Como você quer tirar uma pessoa se nem temos nenhuma? Adicione para retirar!")
+
+    else:
+        print("Certo! Interaçâo encerrada.")
 
 #criar um menu
 print("Bem vindo ao menu interativo da nave. Por favor, selecione uma opçâo:")
 while True:
-    print("\n 1- Mostrar status da nave 💻 | 2- Viajar 🚀 | 3- Abastecer ⛽ | 4- Novo tribulante 🧑‍🚀 | 5- Sair ❌")
+    print("\n 1- Mostrar status da nave 💻 | 2- Viajar 🚀 | 3- Abastecer ⛽ | 4- Novo tribulante 🧑‍🚀 | 5- Retirar tripulantes 🚶‍➡️ | 6- Sair ❌")
     opção = input("Escolha: ")
     
     if opção == "1":
@@ -46,6 +60,8 @@ while True:
      abastecer()
     elif opção == "4":
         registrar_Tripulantes()
+    elif opção == "5":
+        retirar_tripulantes()
     else:
         print("Viagem encerrada!")
         break
