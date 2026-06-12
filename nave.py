@@ -8,9 +8,13 @@ tripulantes = []
 def viajar():
     #aqui fica o código
     global combustivel # avisa a função que vamos modificar um variavel externa
-    if combustivel>=30:
+    if combustivel>=30 and tripulantes != []:
         combustivel = combustivel - 30
         print("A nave viajou")
+
+    elif tripulantes == []:
+        print("Você não possui tribulantes! Como quer viajar assim? Adicione alguém!")
+    
     else:
         print("Você não possui combustível suficiente para viajar. Abasteça!!")
     
